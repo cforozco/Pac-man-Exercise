@@ -18,10 +18,10 @@ var focus = 0;
 
 // This function is called on mouse click. Every time it is called, it updates the PacMan image, position and direction on the screen.
 function Run() {
-  let img = document.getElementById('PacMan');
+  let img = document.getElementById("PacMan");
   let imgWidth = img.width;
   focus = (focus + 1) % 2;
-  direction = checkPageBounds(direction, imgWidth, pos, null);
+  direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
   img.src = pacArray[direction][focus];
   if (direction) {
     pos -= 20;
@@ -45,5 +45,4 @@ function checkPageBounds(direction, imgWidth, pos, pageWidth) {
   return direction;
 }
 
-//Please do not change
 module.exports = checkPageBounds;
